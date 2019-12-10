@@ -1,3 +1,54 @@
+body {
+  background-color: lightblue;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .button {
-  color: red;
+  background-color: transparent;
+  border: none;
+  width: 500px;
+}
+
+.ear-left-outer,
+.ear-right-outer {
+  fill: #919191;
+}
+
+.ear-left-inner,
+.ear-right-inner {
+  fill: #6d6d6d;
+}
+
+.eye-right-outer,
+.eye-left-outer,
+.nostril-right-outer,
+.nostril-left-outer,
+.body {
+  fill: #aaaaaa;
+}
+
+.eye-right-inner,
+.eye-left-inner {
+  fill: #ffffff;
+}
+
+.nostril-right-inner,
+.nostril-left-inner {
+  fill: #8c8c8c;
+}
+
+.freckle {
+  fill: #7c7c7c;
+}
+
+.tongue {
+  fill: #ff4848;
+}
+
+.tooth-left,
+.tooth-right {
+  fill: #ffffe1;
 }
