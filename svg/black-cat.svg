@@ -1,0 +1,38 @@
+<svg width="1130" height="955" viewBox="0 0 1130 955" fill="none" xmlns="http://www.w3.org/2000/svg">
+<!-- <rect width="1130" height="955" fill="#E5E5E5"/> -->
+  <g class="head">
+    <path class="face" d="M321.49 310.462C215.087 384.989 163.896 612.685 151.5 624.5C139.103 636.315 165 802.5 232 880C299 957.5 741.5 998 807 880C872.5 762 937 706.5 922 624.5C907 542.5 778.094 360.45 690.286 300.464C602.477 240.479 427.893 235.934 321.49 310.462Z" fill="black" stroke="black"/>
+    <path class="left-ear" d="M143 52.4208C84.9999 76.4208 221 444.421 221 444.421L400 274.421C400 274.421 201 28.4208 143 52.4208Z" fill="black" stroke="black"/>
+    <path class="right-ear" d="M873 2.4208C796 -21.5792 615 266.421 615 266.421L820 438.421C820 438.421 950 26.4208 873 2.4208Z" fill="black" stroke="black"/>
+  </g>
+  <path class="mouth" d="M492 806.419C540.747 811.848 547.499 765 547.499 765C547.499 765 578.475 825.854 613 801.062" stroke="white" stroke-width="2"/>
+  <g class="eyes">
+    <g class="left-eye">
+      <path class="left-eye-outer" d="M286 540.421C282.408 466.421 447 424.421 468 512.421C489 600.421 289.592 614.421 286 540.421Z" fill="black" stroke="white" stroke-width="5"/>
+      <path class="left-eye-inner" d="M300 532.938C300 503.206 410.352 426.457 447.136 517.726C483.92 608.995 300 562.669 300 532.938Z" fill="white" stroke="black"/>
+      <circle class="left-pupil" cx="376" cy="520.421" r="18" fill="black"/>
+    </g>
+    <g class="right-eye">
+      <path class="right-eye-outer" d="M552 514.421C552 451.421 794 377.421 786 522.421C778 667.421 552 577.421 552 514.421Z" fill="black" stroke="white" stroke-width="5"/>
+      <path class="right-eye-inner" d="M573.693 508.886C587.685 454.114 763.716 405.841 762.998 526.525C762.28 647.208 559.701 563.658 573.693 508.886Z" fill="white" stroke="black"/>
+      <circle class="right-eye-pupil" cx="650" cy="514.421" r="18" fill="black"/>
+    </g>
+  </g>
+  <g class="whiskers">
+    <g class="left-whisker">
+      <path class="left-top-whisker" d="M521 691.421C113 684.221 147 604.421 2 691.421" stroke="white" stroke-width="4"/>
+      <path class="left-mclassdle-whisker" d="M518 692.421C518 692.421 138 669.421 12 724.421" stroke="white" stroke-width="4"/>
+      <path class="left-bottom-whisker" d="M517 695.421C517 695.421 56.9999 710.421 25.9999 756.421" stroke="white" stroke-width="4"/>
+    </g>
+    <g class="right-whisker">
+      <path class="right-top-whisker" d="M563 680.982C563 680.982 1080.72 584.47 1124.33 670.926" stroke="white" stroke-width="4"/>
+      <path class="right-mclassdle-whisker" d="M564 685.421C564 685.421 1094 643.421 1106 685.421" stroke="white" stroke-width="4"/>
+      <path class="right-bottom-whisker" d="M566 693.421C566 693.421 1084 693.421 1088 729.421" stroke="white" stroke-width="4"/>
+    </g>
+  </g>
+  <g class="nose">
+    <path class="nose-top" d="M461 678.421C461 678.421 493.4 630.987 533 652.879C572.6 674.772 587 601.797 605 678.421" stroke="white" stroke-width="6"/>
+    <ellipse class="left-nostril" cx="517.34" cy="698.058" rx="13.9056" ry="27.8112" transform="rotate(-22.2585 517.34 698.058)" fill="white"/>
+    <ellipse class="right-nostril" cx="560.448" cy="697.394" rx="14.3667" ry="28.7333" transform="rotate(32.1309 560.448 697.394)" fill="white"/>
+  </g>
+</svg>
