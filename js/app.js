@@ -93,4 +93,27 @@ function moveBauble(e) {
   });
 }
 
+function smashBauble() {
+  const baubleSmash = gsap.timeline();
+  baubleSmash.to(".moving-bauble", {
+    duration: 0.2,
+    scale: 10,
+    ease: "bounce"
+  });
+  baubleSmash.to(".moving-bauble", { duration: 0.1, scale: 0 });
+  baubleSmash.to(".moving-bauble", {
+    duration: 0.1,
+    scale: 1,
+    ease: "slow",
+    delay: 3
+  });
+}
+
+function animateOnKeyUp(e) {
+  if (e.keyCode === 32) {
+    smashBauble();
+  }
+}
+
 window.addEventListener("mousemove", animateOnMouseMove);
+window.addEventListener("keyup", animateOnKeyUp);
