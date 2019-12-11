@@ -20,7 +20,6 @@ body {
 /* Top Level Styling */
 .app {
   align-items: flex-end;
-  /* background-color: var(--tree-green); */
   display: flex;
   height: 100vh;
   justify-content: center;
@@ -306,7 +305,7 @@ body {
 
 .bauble-background {
   fill: var(--primary);
-  stroke: var(--secondary);
+  stroke: var(--tree-green);
   stroke-width: 2;
 }
 
