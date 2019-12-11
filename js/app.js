@@ -6,94 +6,83 @@
 // });
 
 // Hover Animation
-const mouthOpen = gsap.timeline();
+//const moveBauble = gsap.timeline();
 //repeat: -1 means it will run on an infinite loop
 
 //For animations that have repeated properties, use constants to make it easier to update
 const mouthDuration = 0.3;
 const ease = Power2.easeOut;
 
-mouthOpen.to(
-  ".mouth-back",
-  {
-    duration: mouthDuration,
-    ease: ease,
-    y: -70
-  },
-  0
-);
+// moveBauble.to(
+//   ".bauble__container",
+//   {
+//     duration: 3,
+//     ease: ease,
+//     //top: "500px"
+//     top: e.pageY
+//   },
+//   0
+// );
 //The last parameter is the point of the timeline that you want the animation to start
 
-mouthOpen.to(
-  ".tongue",
-  {
-    duration: mouthDuration * 1.5,
-    ease: ease,
-    y: -70
-  },
-  0
-);
-
-mouthOpen.to(
-  ".teeth",
-  {
-    duration: mouthDuration,
-    ease: ease,
-    y: -70,
-    scaleY: 1.2
-  },
-  0
-);
-
-mouthOpen.to(".freckles", { duration: mouthDuration, ease: ease, y: -10 }, 0);
-mouthOpen.to(".ears", { duration: mouthDuration, ease: ease, y: 6 }, 0);
-mouthOpen.to(".eye-right", { duration: mouthDuration, ease: ease, x: -2 }, 0);
-mouthOpen.to(".eye-left", { duration: mouthDuration, ease: ease, x: 2 }, 0);
-mouthOpen.to(".eyes", { duration: mouthDuration, ease: ease, y: 2 }, 0);
-mouthOpen.to(".nostrils", { duration: mouthDuration, ease: ease, y: -6 }, 0);
-
 //Mouse Events
-const enterButton = () => {
-  mouthOpen.play();
-};
+// const enterButton = () => {
+//   mouthOpen.play();
+// };
+//
+// const leaveButton = () => {
+//   mouthOpen.reverse();
+// };
+//
+// const button = document.querySelector(".button");
+// button.addEventListener("mouseenter", enterButton);
+// button.addEventListener("mouseleave", leaveButton);
 
-const leaveButton = () => {
-  mouthOpen.reverse();
-};
+//Paw Wiggle
+const pawWiggle = gsap.timeline({ paused: true, repeat: 2 });
+pawWiggle.set(".cat__paw", { transformOrigin: "center center" });
+pawWiggle.to(".cat__paw", { duration: 0.1, rotation: 5 });
+pawWiggle.to(".cat__paw", { duration: 0.1, rotation: 0 });
 
-const button = document.querySelector(".button");
-button.addEventListener("mouseenter", enterButton);
-button.addEventListener("mouseleave", leaveButton);
-
-//Ear Wiggle
-const earWiggle = gsap.timeline({ paused: true, repeat: 2 });
-earWiggle.set(".ear-right", { transformOrigin: "center center" });
-earWiggle.to(".ear-right", { duration: 0.1, rotation: 45 });
-earWiggle.to(".ear-right", { duration: 0.1, rotation: 0 });
-
-window.setInterval(() => earWiggle.play(0), 2500);
+window.setInterval(() => pawWiggle.play(0), 3500);
 
 //Eye Tracking
-const eyeRightPupil = document.querySelector(".eye-right-pupil");
-const eyeLeftPupil = document.querySelector(".eye-left-pupil");
-const eyeLeftInner = document.querySelector(".eye-left-inner");
+const eyeRightPupil = document.querySelector(".right-eye-pupil");
+const eyeLeftPupil = document.querySelector(".left-eye-pupil");
+const eyeLeftInner = document.querySelector(".left-eye-inner");
 
 const innerEyeWidth = eyeLeftInner.getBoundingClientRect().width;
 const innerEyeHeight = eyeLeftInner.getBoundingClientRect().height;
 const pupilWidth = eyeLeftPupil.getBoundingClientRect().width;
 const pupilHeight = eyeLeftPupil.getBoundingClientRect().height;
 
-const xMovement = (innerEyeWidth - pupilWidth) / 2;
-const yMovement = (innerEyeHeight - pupilHeight) / 2;
+const xMovement = innerEyeWidth - pupilWidth;
+const yMovement = innerEyeHeight - pupilHeight;
 
-function updateEyePosition(e) {
+function animateOnMouseMove(e) {
+  updateEyes(e);
+  moveBauble(e);
+}
+
+function updateEyes(e) {
   const mousePercentX = e.clientX / document.body.clientWidth;
   const mousePercentY = e.clientY / document.body.clientHeight;
-  const posX = ((mousePercentX * 2 - 1) * xMovement) / 2;
-  const posY = ((mousePercentY * 2 - 1) * yMovement) / 2;
+  const mousePercentAverage = ((mousePercentX + mousePercentY) / 2) * 3 + 1;
+  const posX = (mousePercentX * 2 - 1) * xMovement;
+  const posY = (mousePercentY * 2 - 1) * yMovement;
 
   eyeLeftPupil.style.transform = `translate(${posX}px, ${posY}px)`;
   eyeRightPupil.style.transform = `translate(${posX}px, ${posY}px)`;
 }
 
-window.addEventListener("mousemove", updateEyePosition);
+function moveBauble(e) {
+  const bauble = document.querySelector(".bauble__container");
+  TweenLite.to(bauble, {
+    css: {
+      left: e.pageX,
+      top: e.pageY
+    }
+  });
+}
+
+window.addEventListener("mousemove", animateOnMouseMove);

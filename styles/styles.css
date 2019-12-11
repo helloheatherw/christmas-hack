@@ -1,54 +1,124 @@
+/* Generic Styling */
 body {
-  background-color: lightblue;
-  height: 100vh;
+  overflow: hidden;
+}
+
+/* Top Level Styling */
+.app {
+  align-items: flex-end;
+  background-color: white;
   display: flex;
+  height: 100vh;
   justify-content: center;
-  align-items: center;
+  margin: 0 auto;
+  max-width: 800px;
+  overflow: hidden;
+  width: 100%;
 }
 
-.button {
-  background-color: transparent;
-  border: none;
-  width: 500px;
+/* Cat Styling */
+.cat {
+  display: flex;
+  overflow: hidden;
+  transform: translateY(6em);
+  width: 100%;
 }
 
-.ear-left-outer,
-.ear-right-outer {
-  fill: #919191;
+.cat__head {
+  flex-grow: 7;
 }
 
-.ear-left-inner,
-.ear-right-inner {
-  fill: #6d6d6d;
+.face,
+.ear {
+  fill: black;
+  stroke: black;
 }
 
-.eye-right-outer,
-.eye-left-outer,
-.nostril-right-outer,
-.nostril-left-outer,
-.body {
-  fill: #aaaaaa;
+.mouth {
+  stroke: white;
+  stroke-width: 2;
 }
 
-.eye-right-inner,
-.eye-left-inner {
-  fill: #ffffff;
+.left-eye-pupil,
+.right-eye-pupil {
+  transform-origin: center;
 }
 
-.nostril-right-inner,
-.nostril-left-inner {
-  fill: #8c8c8c;
+.left-eye-outer,
+.right-eye-outer {
+  fill: black;
+  stroke: white;
+  stroke-width: 5;
 }
 
-.freckle {
-  fill: #7c7c7c;
+.left-eye-inner,
+.right-eye-inner {
+  fill: white;
+  stroke: black;
 }
 
-.tongue {
-  fill: red;
+.pupil {
+  fill: black;
 }
 
-.tooth-left,
-.tooth-right {
-  fill: #ffffe1;
+.whisker {
+  stroke: white;
+  stroke-width: 4;
+}
+
+.nose-top {
+  stroke: white;
+  stroke-width: 6;
+}
+
+.nostril {
+  fill: white;
+}
+
+/* Paw Styling */
+.cat__paw {
+  flex-grow: 1;
+  transform: translateY(10em);
+}
+
+.cat__paw svg,
+.cat__head svg {
+  fill: none;
+}
+
+.paw path {
+  fill: black;
+  stroke: black;
+}
+
+#paw-pads .paw__pad {
+  fill: white;
+  stroke: white;
+}
+
+/* Bauble Styling  */
+.bauble__container {
+  position: absolute;
+  top: 0;
+  width: 150px;
+}
+
+.bauble__svg {
+  fill: none;
+}
+
+.bauble-background {
+  fill: black;
+  stroke: white;
+  stroke-width: 2;
+}
+
+.line {
+  stroke: white;
+  stroke-width: 2;
+}
+
+.star,
+.zigzag {
+  fill: white;
 }
