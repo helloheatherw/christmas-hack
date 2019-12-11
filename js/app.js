@@ -1,69 +1,29 @@
-// Example of GSAP function
-// gsap.to(".button", {
-//   border: "3px solid red",
-//   duration: 2,
-//   y: 200
-// });
-
-// Hover Animation
-//const moveBauble = gsap.timeline();
-//repeat: -1 means it will run on an infinite loop
-
-//For animations that have repeated properties, use constants to make it easier to update
-const mouthDuration = 0.3;
-const ease = Power2.easeOut;
-
-// moveBauble.to(
-//   ".bauble__container",
-//   {
-//     duration: 3,
-//     ease: ease,
-//     //top: "500px"
-//     top: e.pageY
-//   },
-//   0
-// );
-//The last parameter is the point of the timeline that you want the animation to start
-
-//Mouse Events
-// const enterButton = () => {
-//   mouthOpen.play();
-// };
-//
-// const leaveButton = () => {
-//   mouthOpen.reverse();
-// };
-//
-// const button = document.querySelector(".button");
-// button.addEventListener("mouseenter", enterButton);
-// button.addEventListener("mouseleave", leaveButton);
-
 //Head Bob
-const headBob = gsap.timeline({ paused: true });
+const headBob = gsap.timeline({ repeat: -1 });
 headBob.set(".cat__head", { transformOrigin: "center center" });
 headBob.to(".cat__head", {
-  duration: 2,
-  translateY: "150px",
-  ease: "slow"
-});
-headBob.to(".cat__head", {
-  duration: 0.5,
+  duration: 3,
   translateY: "100px",
-  ease: "rough"
+  ease: "slow",
+  delay: 3
+});
+headBob.from(".cat__head", {
+  translateY: "100px",
+  ease: "slow",
+  delay: 1,
+  duration: 1.5
 });
 headBob.to(".cat__head", {
-  duration: 2.5,
-  translateY: "50px",
-  ease: "rough",
-  delay: "+=1"
+  duration: 3,
+  translateY: "100px",
+  ease: "slow",
+  delay: 3
 });
-
-window.setInterval(() => headBob.play(0), 5000);
 
 //Paw Wiggle
 const pawWiggle = gsap.timeline({ paused: true, repeat: 2 });
 pawWiggle.set(".cat__paw", { transformOrigin: "center center" });
-pawWiggle.to(".cat__paw", { duration: 0.1, rotation: 2 });
+pawWiggle.to(".cat__paw", { duration: 0.1, rotation: 5 });
 pawWiggle.to(".cat__paw", { duration: 0.1, rotation: 0 });
 
 window.setInterval(() => pawWiggle.play(0), 4500);
