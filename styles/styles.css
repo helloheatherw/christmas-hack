@@ -90,7 +90,7 @@ body {
 /* Paw Styling */
 .cat__paw {
   flex-grow: 1;
-  transform: translateY(10em);
+  transform: translateY(15em);
 }
 
 .cat__paw svg,
