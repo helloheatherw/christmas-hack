@@ -68,43 +68,49 @@ function moveBauble(e) {
 }
 
 function smashBauble(e) {
-  const paw = document.querySelector(".cat__paw");
-  const bauble = document.querySelector(".moving-bauble");
-  const baubleX = bauble.offsetLeft / document.body.clientWidth;
-  const baubleY = bauble.offsetTop / document.body.clientHeight;
-  const pawY = paw.offsetTop;
-
   const baubleSmash = gsap.timeline();
   baubleSmash.to(".cat__paw", {
-    duration: 0.1,
-    scale: 1.2,
-    rotation: baubleX * 45,
-    translateY: baubleY
+    duration: 0.2,
+    translateY: "20%",
+    scaleY: 1.5,
+    ease: "elastic"
+  });
+  baubleSmash.to(".cat__paw", {
+    duration: 0,
+    translateY: "45%",
+    scaleY: 1
   });
   baubleSmash.to(".moving-bauble", {
     duration: 0.2,
     scale: 10,
-    ease: "bounce",
-    delay: 0.1
+    ease: "bounce"
   });
-  baubleSmash.to(".moving-bauble", { duration: 0.1, scale: 0 });
-  baubleSmash.to(".cat__paw", {
-    translateY: "-1000px",
-    duration: 0.1,
-    scale: 1,
-    rotation: baubleX * 45,
-    transformOrigin: "center center"
+  baubleSmash.to(".tree__container", {
+    duration: 0.2,
+    bottom: 0,
+    ease: "elastic"
   });
   baubleSmash.to(".moving-bauble", {
     duration: 0.1,
-    scale: 1,
-    ease: "slow",
-    delay: 3
+    scale: 0
   });
-  baubleSmash.from(".cat__paw", {
-    delay: 1,
-    translateY: "1000px",
-    duration: 2
+  baubleSmash.to(".tree__container", {
+    duration: 0.1,
+    scaleY: 0
+  });
+  baubleSmash.to(".tree__container", {
+    duration: 0.2,
+    scaleY: 1,
+    bottom: "100%",
+    delay: 2
+  });
+  baubleSmash.to(".moving-bauble", {
+    duration: 0.1,
+    scale: 1
+  });
+  baubleSmash.to(".tree__container", {
+    duration: 3,
+    bottom: "75%"
   });
 }
 
