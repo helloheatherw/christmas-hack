@@ -76,7 +76,7 @@ function updateEyes(e) {
 }
 
 function moveBauble(e) {
-  const bauble = document.querySelector(".bauble__container");
+  const bauble = document.querySelector(".moving-bauble");
   TweenLite.to(bauble, {
     css: {
       left: e.pageX,

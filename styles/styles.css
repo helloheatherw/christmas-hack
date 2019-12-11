@@ -1,12 +1,24 @@
+/* Variables */
+:root {
+  --primary: black;
+  --secondary: white;
+  --red: #fc0901;
+  --yellow: #fcf401;
+  --green: #07a12f;
+  --pink: #fad6ef;
+}
+
 /* Generic Styling */
 body {
+  height: 100vh;
   overflow: hidden;
+  width: 100vw;
 }
 
 /* Top Level Styling */
 .app {
   align-items: flex-end;
-  background-color: white;
+  background-color: var(--secondary);
   display: flex;
   height: 100vh;
   justify-content: center;
@@ -30,12 +42,12 @@ body {
 
 .face,
 .ear {
-  fill: black;
-  stroke: black;
+  fill: var(--primary);
+  stroke: var(--primary);
 }
 
 .mouth {
-  stroke: white;
+  stroke: var(--secondary);
   stroke-width: 2;
 }
 
@@ -46,33 +58,33 @@ body {
 
 .left-eye-outer,
 .right-eye-outer {
-  fill: black;
-  stroke: white;
+  fill: var(--primary);
+  stroke: var(--secondary);
   stroke-width: 5;
 }
 
 .left-eye-inner,
 .right-eye-inner {
-  fill: white;
-  stroke: black;
+  fill: var(--secondary);
+  stroke: var(--primary);
 }
 
 .pupil {
-  fill: black;
+  fill: var(--primary);
 }
 
 .whisker {
-  stroke: white;
+  stroke: var(--secondary);
   stroke-width: 4;
 }
 
 .nose-top {
-  stroke: white;
+  stroke: var(--secondary);
   stroke-width: 6;
 }
 
 .nostril {
-  fill: white;
+  fill: var(--pink);
 }
 
 /* Paw Styling */
@@ -87,20 +99,197 @@ body {
 }
 
 .paw path {
-  fill: black;
-  stroke: black;
+  fill: var(--primary);
+  stroke: var(--primary);
 }
 
 #paw-pads .paw__pad {
-  fill: white;
-  stroke: white;
+  fill: var(--pink);
+  stroke: var(--pink);
 }
 
 /* Bauble Styling  */
-.bauble__container {
+.moving-bauble {
   position: absolute;
   top: 0;
   width: 150px;
+}
+
+.moving-bauble .star,
+.moving-bauble .zigzag,
+.moving-bauble .line {
+  fill: var(--yellow);
+  stroke: var(--yellow);
+}
+
+.static-bauble {
+  position: absolute;
+  width: 15em;
+}
+
+.static-bauble--one {
+  left: 0;
+  transform: rotate(-15deg);
+  width: 20em;
+}
+
+.static-bauble--two {
+  left: 10%;
+  transform: rotate(5deg);
+  transform: translateY(1em);
+}
+
+.static-bauble--three {
+  right: 15%;
+  transform: rotate(-10deg);
+  transform: translateY(4em);
+  width: 20em;
+}
+
+.static-bauble--four {
+  right: 10%;
+  transform: rotate(45deg);
+  transform: translateY(1em);
+  width: 10em;
+}
+
+.static-bauble--five {
+  right: 0;
+  transform: rotate(30deg);
+}
+
+.static-bauble--six {
+  right: 15%;
+  transform: rotate(-30deg);
+  width: 6em;
+}
+
+.static-bauble--seven {
+  right: 35%;
+  transform: rotate(-60deg);
+  transform: translateY(1em);
+  width: 14em;
+}
+
+.static-bauble--eight {
+  right: 40%;
+  transform: rotate(90deg);
+  transform: translateY(5em);
+  width: 20em;
+}
+
+.static-bauble--nine {
+  right: 80%;
+  transform: rotate(70deg);
+  transform: translateY(4em);
+  width: 11em;
+}
+
+.static-bauble--ten {
+  right: 60%;
+  transform: rotate(-10deg);
+  transform: translateY(4em);
+  width: 18em;
+}
+
+.static-bauble--one .star {
+  fill: var(--red);
+}
+
+.static-bauble--one .zigzag,
+.static-bauble--one .line {
+  fill: var(--yellow);
+  stroke: var(--yellow);
+}
+
+.static-bauble--two .star {
+  fill: var(--yellow);
+}
+
+.static-bauble--two .zigzag,
+.static-bauble--two .line {
+  fill: var(--red);
+  stroke: var(--red);
+}
+
+.static-bauble--three .star {
+  fill: var(--red);
+}
+
+.static-bauble--three .zigzag,
+.static-bauble--three .line {
+  fill: var(--green);
+  stroke: var(--green);
+}
+
+.static-bauble--four .star {
+  fill: var(--yellow);
+}
+
+.static-bauble--four .zigzag,
+.static-bauble--four .line {
+  fill: var(--green);
+  stroke: var(--green);
+}
+
+.static-bauble--five .star {
+  fill: var(--green);
+}
+
+.static-bauble--five .zigzag,
+.static-bauble--five .line {
+  fill: var(--red);
+  stroke: var(--red);
+}
+
+.static-bauble--six .star {
+  fill: var(--green);
+}
+
+.static-bauble--six .zigzag,
+.static-bauble--six .line {
+  fill: var(--yellow);
+  stroke: var(--yellow);
+}
+
+.static-bauble--seven .star {
+  fill: var(--red);
+}
+
+.static-bauble--seven .zigzag,
+.static-bauble--seven .line {
+  fill: var(--green);
+  stroke: var(--green);
+}
+
+.static-bauble--eight .star {
+  fill: var(--yellow);
+}
+
+.static-bauble--eight .zigzag,
+.static-bauble--eight .line {
+  fill: var(--green);
+  stroke: var(--green);
+}
+
+.static-bauble--nine .star {
+  fill: var(--red);
+}
+
+.static-bauble--nine .zigzag,
+.static-bauble--nine .line {
+  fill: var(--green);
+  stroke: var(--green);
+}
+
+.static-bauble--ten .star {
+  fill: var(--green);
+}
+
+.static-bauble--ten .zigzag,
+.static-bauble--ten .line {
+  fill: var(--red);
+  stroke: var(--red);
 }
 
 .bauble__svg {
@@ -108,17 +297,17 @@ body {
 }
 
 .bauble-background {
-  fill: black;
-  stroke: white;
+  fill: var(--primary);
+  stroke: var(--secondary);
   stroke-width: 2;
 }
 
 .line {
-  stroke: white;
+  stroke: var(--secondary);
   stroke-width: 2;
 }
 
 .star,
 .zigzag {
-  fill: white;
+  fill: var(--secondary);
 }
