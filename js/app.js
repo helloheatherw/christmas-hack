@@ -111,7 +111,10 @@ function smashBauble() {
 
 function animateOnKeyUp(e) {
   if (e.keyCode === 32) {
+    pawWiggle.paused(true);
     smashBauble();
+
+    window.setTimeout(() => payWiggle.paused(false), 3000);
   }
 }
 
