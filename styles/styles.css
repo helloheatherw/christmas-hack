@@ -6,10 +6,12 @@
   --yellow: #fcf401;
   --green: #07a12f;
   --pink: #fad6ef;
+  --tree-green: #134213;
 }
 
 /* Generic Styling */
 body {
+  background-color: var(--tree-green);
   height: 100vh;
   overflow: hidden;
   width: 100vw;
@@ -18,7 +20,7 @@ body {
 /* Top Level Styling */
 .app {
   align-items: flex-end;
-  background-color: var(--secondary);
+  /* background-color: var(--tree-green); */
   display: flex;
   height: 100vh;
   justify-content: center;
@@ -34,7 +36,6 @@ body {
   overflow: hidden;
   transform: translateY(6em);
   width: 100%;
-  /* This might need deleting */
   height: 100%;
 }
 

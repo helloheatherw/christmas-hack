@@ -41,9 +41,6 @@ const ease = Power2.easeOut;
 //Head Bob
 const headBob = gsap.timeline({ paused: true });
 headBob.set(".cat__head", { transformOrigin: "center center" });
-// headBob.to(".cat__head", { duration: 2, translateY: "50px", ease: "slow" });
-// headBob.to(".cat__head", { duration: 0.5, translateY: "0px", ease: "rough" });
-// New stuff that might be reverted
 headBob.to(".cat__head", {
   duration: 2,
   translateY: "150px",
