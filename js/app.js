@@ -41,15 +41,32 @@ const ease = Power2.easeOut;
 //Head Bob
 const headBob = gsap.timeline({ paused: true });
 headBob.set(".cat__head", { transformOrigin: "center center" });
-headBob.to(".cat__head", { duration: 2, translateY: "50px", ease: "slow" });
-headBob.to(".cat__head", { duration: 0.5, translateY: "0px", ease: "rough" });
+// headBob.to(".cat__head", { duration: 2, translateY: "50px", ease: "slow" });
+// headBob.to(".cat__head", { duration: 0.5, translateY: "0px", ease: "rough" });
+// New stuff that might be reverted
+headBob.to(".cat__head", {
+  duration: 2,
+  translateY: "150px",
+  ease: "slow"
+});
+headBob.to(".cat__head", {
+  duration: 0.5,
+  translateY: "100px",
+  ease: "rough"
+});
+headBob.to(".cat__head", {
+  duration: 2.5,
+  translateY: "50px",
+  ease: "rough",
+  delay: "+=1"
+});
 
-window.setInterval(() => headBob.play(0), 3000);
+window.setInterval(() => headBob.play(0), 5000);
 
 //Paw Wiggle
 const pawWiggle = gsap.timeline({ paused: true, repeat: 2 });
 pawWiggle.set(".cat__paw", { transformOrigin: "center center" });
-pawWiggle.to(".cat__paw", { duration: 0.1, rotation: 5 });
+pawWiggle.to(".cat__paw", { duration: 0.1, rotation: 2 });
 pawWiggle.to(".cat__paw", { duration: 0.1, rotation: 0 });
 
 window.setInterval(() => pawWiggle.play(0), 4500);
@@ -93,28 +110,53 @@ function moveBauble(e) {
   });
 }
 
-function smashBauble() {
+function smashBauble(e) {
+  const paw = document.querySelector(".cat__paw");
+  const bauble = document.querySelector(".moving-bauble");
+  const baubleX = bauble.offsetLeft / document.body.clientWidth;
+  const baubleY = bauble.offsetTop / document.body.clientHeight;
+  const pawY = paw.offsetTop;
+
   const baubleSmash = gsap.timeline();
+  baubleSmash.to(".cat__paw", {
+    duration: 0.1,
+    scale: 1.2,
+    rotation: baubleX * 45,
+    translateY: baubleY
+  });
   baubleSmash.to(".moving-bauble", {
     duration: 0.2,
     scale: 10,
-    ease: "bounce"
+    ease: "bounce",
+    delay: 0.1
   });
   baubleSmash.to(".moving-bauble", { duration: 0.1, scale: 0 });
+  baubleSmash.to(".cat__paw", {
+    translateY: "-1000px",
+    duration: 0.1,
+    scale: 1,
+    rotation: baubleX * 45,
+    transformOrigin: "center center"
+  });
   baubleSmash.to(".moving-bauble", {
     duration: 0.1,
     scale: 1,
     ease: "slow",
     delay: 3
   });
+  baubleSmash.from(".cat__paw", {
+    delay: 1,
+    translateY: "1000px",
+    duration: 2
+  });
 }
 
 function animateOnKeyUp(e) {
   if (e.keyCode === 32) {
     pawWiggle.paused(true);
-    smashBauble();
+    smashBauble(e);
 
-    window.setTimeout(() => payWiggle.paused(false), 3000);
+    window.setTimeout(() => pawWiggle.paused(false), 3000);
   }
 }
 

@@ -34,10 +34,17 @@ body {
   overflow: hidden;
   transform: translateY(6em);
   width: 100%;
+  /* This might need deleting */
+  height: 100%;
+}
+
+.cat .cat__paw {
+  transform: translateY(45%);
 }
 
 .cat__head {
   flex-grow: 7;
+  transform: translateY(25%);
 }
 
 .face,
@@ -90,7 +97,7 @@ body {
 /* Paw Styling */
 .cat__paw {
   flex-grow: 1;
-  transform: translateY(15em);
+  transform: translateY(150px);
 }
 
 .cat__paw svg,
