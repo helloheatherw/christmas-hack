@@ -38,13 +38,21 @@ const ease = Power2.easeOut;
 // button.addEventListener("mouseenter", enterButton);
 // button.addEventListener("mouseleave", leaveButton);
 
+//Head Bob
+const headBob = gsap.timeline({ paused: true });
+headBob.set(".cat__head", { transformOrigin: "center center" });
+headBob.to(".cat__head", { duration: 2, translateY: "50px", ease: "slow" });
+headBob.to(".cat__head", { duration: 0.5, translateY: "0px", ease: "rough" });
+
+window.setInterval(() => headBob.play(0), 3000);
+
 //Paw Wiggle
 const pawWiggle = gsap.timeline({ paused: true, repeat: 2 });
 pawWiggle.set(".cat__paw", { transformOrigin: "center center" });
 pawWiggle.to(".cat__paw", { duration: 0.1, rotation: 5 });
 pawWiggle.to(".cat__paw", { duration: 0.1, rotation: 0 });
 
-window.setInterval(() => pawWiggle.play(0), 3500);
+window.setInterval(() => pawWiggle.play(0), 4500);
 
 //Eye Tracking
 const eyeRightPupil = document.querySelector(".right-eye-pupil");
