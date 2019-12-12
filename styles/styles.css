@@ -17,16 +17,14 @@ body {
   width: 100vw;
 }
 
+/* Tree Styling */
 .tree__group path {
   fill: #096d09;
 }
 
 .tree__container {
   position: absolute;
-  bottom: 75%;
-  /* height: 50vh; */
-  /* width: 1000px; */
-  /* margin: 0 auto; */
+  bottom: 70%;
 }
 
 /* Top Level Styling */
