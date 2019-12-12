@@ -18,16 +18,6 @@ body {
   width: 100vw;
 }
 
-/* Tree Styling */
-.tree__group path {
-  fill: var(--tree-green);
-}
-
-.tree__container {
-  position: absolute;
-  bottom: 70%;
-}
-
 /* Top Level Styling */
 .app {
   align-items: flex-end;
@@ -38,6 +28,16 @@ body {
   max-width: 800px;
   overflow: hidden;
   width: 100%;
+}
+
+/* Tree Styling */
+.tree__group path {
+  fill: var(--tree-green);
+}
+
+.tree__container {
+  position: absolute;
+  bottom: 70%;
 }
 
 /* Cat Styling */
