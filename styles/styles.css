@@ -6,12 +6,13 @@
   --yellow: #fcf401;
   --green: #07a12f;
   --pink: #fad6ef;
-  --tree-green: #134213;
+  --dark-green: #134213;
+  --tree-green: #096d09;
 }
 
 /* Generic Styling */
 body {
-  background-color: var(--tree-green);
+  background-color: var(--dark-green);
   height: 100vh;
   overflow: hidden;
   width: 100vw;
@@ -19,7 +20,7 @@ body {
 
 /* Tree Styling */
 .tree__group path {
-  fill: #096d09;
+  fill: var(--tree-green);
 }
 
 .tree__container {
@@ -319,7 +320,7 @@ body {
 
 .bauble-background {
   fill: var(--primary);
-  stroke: var(--tree-green);
+  stroke: var(--dark-green);
   stroke-width: 2;
 }
 
