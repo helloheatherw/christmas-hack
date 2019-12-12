@@ -67,61 +67,49 @@ function moveBauble(e) {
   });
 }
 
-function smashBauble(e) {
+// Paw smashes the bauble
+function animateOnKeyUp(e) {
+  if (e.keyCode === 32) {
+    pawWiggle.paused(true);
+    startPawAnimation();
+
+    window.setTimeout(() => pawWiggle.paused(false), 3000);
+  }
+}
+
+function startPawAnimation() {
   const baubleSmash = gsap.timeline();
+
   baubleSmash.to(".cat__paw", {
     duration: 0.2,
-    translateY: "20%",
-    scaleY: 1.5,
+    scale: 1.2,
     ease: "elastic"
-  });
-  baubleSmash.to(".cat__paw", {
-    duration: 0,
-    translateY: "45%",
-    scaleY: 1
   });
   baubleSmash.to(".moving-bauble", {
     duration: 0.2,
     scale: 10,
     ease: "bounce"
   });
-  baubleSmash.to(".tree__container", {
+  baubleSmash.to(".cat__paw", {
     duration: 0.2,
-    bottom: 0,
+    scale: 1,
     ease: "elastic"
   });
   baubleSmash.to(".moving-bauble", {
     duration: 0.1,
     scale: 0
   });
-  baubleSmash.to(".tree__container", {
-    duration: 0.1,
-    scaleY: 0
-  });
-  baubleSmash.to(".tree__container", {
-    duration: 0.2,
-    scaleY: 1,
-    bottom: "100%",
-    delay: 2
-  });
   baubleSmash.to(".moving-bauble", {
     duration: 0.1,
-    scale: 1
+    scale: 1,
+    delay: 2
   });
-  baubleSmash.to(".tree__container", {
-    duration: 3,
-    bottom: "75%"
-  });
+  return false;
 }
 
-function animateOnKeyUp(e) {
-  if (e.keyCode === 32) {
-    pawWiggle.paused(true);
-    smashBauble(e);
-
-    window.setTimeout(() => pawWiggle.paused(false), 3000);
-  }
-}
+// Event Listeners
+const paw = document.querySelector(".cat__paw");
+paw.addEventListener("click", startPawAnimation);
 
 window.addEventListener("mousemove", animateOnMouseMove);
 window.addEventListener("keyup", animateOnKeyUp);
